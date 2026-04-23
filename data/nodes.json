@@ -13,7 +13,7 @@
   "WP001": {"label": "", "x": 45,  "y": 175, "type": "waypoint"},
   "WP002": {"label": "", "x": 80, "y": 175, "type": "waypoint"},
   "WP003": {"label": "", "x": 120, "y": 175, "type": "waypoint"},
-  "WP004": {"label": "", "x": 157, "y": 175, "type": "waypoint"},
+  "WP004": {"label": "", "x": 153, "y": 175, "type": "waypoint"},
   "WP005": {"label": "", "x": 175, "y": 175, "type": "waypoint"},
   "WP006": {"label": "", "x": 175, "y": 145, "type": "waypoint"},
   "WP007": {"label": "", "x": 180, "y": 59, "type": "waypoint"},
@@ -28,12 +28,12 @@
   "WP016": {"label": "", "x": 220, "y": 175, "type": "waypoint"},
   "WP017": {"label": "", "x": 235, "y": 180, "type": "waypoint"},
   "WP018": {"label": "", "x": 260, "y": 200, "type": "waypoint"},
-  "WP019": {"label": "", "x": 264, "y": 202,  "type": "waypoint"},
+  "WP019": {"label": "", "x": 263, "y": 202,  "type": "waypoint"},
   "WP020": {"label": "", "x": 275, "y": 191,  "type": "waypoint"},
   "WP021": {"label": "", "x": 292, "y": 166, "type": "waypoint"},
   "WP022": {"label": "", "x": 290, "y": 125, "type": "waypoint"},
   "WP023": {"label": "", "x": 285, "y": 200, "type": "waypoint"},
-  "WP024": {"label": "", "x": 320, "y": 200, "type": "waypoint"},
+  "WP024": {"label": "", "x": 319, "y": 200, "type": "waypoint"},
   "WP025": {"label": "", "x": 320, "y": 175, "type": "waypoint"},
   "WP026": {"label": "", "x": 333, "y": 178, "type": "waypoint"},
   "WP027": {"label": "", "x": 354,  "y": 157, "type": "waypoint"},
@@ -42,5 +42,5 @@
   "WP030": {"label": "", "x": 391,  "y": 110, "type": "waypoint"},
   "WP031": {"label": "", "x": 356,  "y": 78, "type": "waypoint"},
   "WP032": {"label": "", "x": 360,  "y": 57, "type": "waypoint"},
-  "WP033": {"label": "", "x": 377, "y": 57, "type": "waypoint"}
+  "WP033": {"label": "", "x": 375, "y": 57, "type": "waypoint"}
 }

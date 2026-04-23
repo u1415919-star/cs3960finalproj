@@ -2,7 +2,7 @@ import plotly.graph_objects as go
 from PIL import Image
 
 def build_map_figure(nodes, edges, path=[]):
-    img = Image.open("assets/myclassmap.png")
+    img = Image.open("assets/myclassmapss.png")
     img_width, img_height = img.size
 
     fig = go.Figure()

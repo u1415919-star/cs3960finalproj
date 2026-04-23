@@ -40,5 +40,7 @@
   {"from": "WP031",     "to": "NW_GARAGE", "weight": 12},
   {"from": "WP031",     "to": "WP032",     "weight": 42},
   {"from": "WP032",     "to": "WP033",     "weight": 34},
-  {"from": "WP033",     "to": "FASB",      "weight": 14}
+  {"from": "WP033",     "to": "FASB",      "weight": 14},
+  {"from": "PHYS", "to": "WP007", "weight": 32},
+  {"from": "PHYS", "to": "WP006", "weight": 60}
 ]
