@@ -6,8 +6,12 @@ Using Dijkstra's Algorithm, the user can find the shortest path between two buil
 The application uses streamlit, plotly, and pillow. 
 
 To run the application:
+
 pip install streamlit plotly pillow
+
 streamlit run main.py
 
+
 Author: Ngou Hei Lo
+
 Date: April 22 2026
