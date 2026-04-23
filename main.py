@@ -12,10 +12,12 @@ node_labels = {nid: data["label"] for nid, data in nodes.items()}
 # Side bar
 with st.sidebar:
     st.header("Find a Route")
-    start = st.selectbox("Start", options=list(nodes.keys()),
-                         format_func=lambda x: node_labels[x])
-    end   = st.selectbox("End",   options=list(nodes.keys()),
-                         format_func=lambda x: node_labels[x], index=1)
+    building_ids = [nid for nid, data in nodes.items() if data.get("type") == "building"]
+
+    start = st.selectbox("Start", options=building_ids,
+                format_func=lambda x: node_labels[x])
+    end   = st.selectbox("End",   options=building_ids,
+                     format_func=lambda x: node_labels[x], index=1)
     go    = st.button("Find Shortest Path", use_container_width=True)
 
 # Main map

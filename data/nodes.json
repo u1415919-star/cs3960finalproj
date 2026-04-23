@@ -42,5 +42,6 @@
   "WP030": {"label": "", "x": 391,  "y": 110, "type": "waypoint"},
   "WP031": {"label": "", "x": 356,  "y": 78, "type": "waypoint"},
   "WP032": {"label": "", "x": 360,  "y": 57, "type": "waypoint"},
-  "WP033": {"label": "", "x": 375, "y": 57, "type": "waypoint"}
+  "WP033": {"label": "", "x": 375, "y": 57, "type": "waypoint"},
+  "WP034": {"label": "", "x": 311, "y": 160, "type": "waypoint"}
 }
