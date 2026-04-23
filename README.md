@@ -11,7 +11,10 @@ pip install streamlit plotly pillow
 
 streamlit run main.py
 
-
+-------------------------------------
 Author: Ngou Hei Lo
 
 Date: April 22 2026
+-------------------------------------
+Final project Video link (set to people in your company instead of invite only)
+https://uofu.box.com/s/lvuy24mwua7a4ydxtciuqnkxw2pdkpc0
