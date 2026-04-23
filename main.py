@@ -1,48 +1,35 @@
-import heapq
+import streamlit as st
+from graph.campus_graph import load_graph
+from graph.dijkstra import dijkstra
+from ui.map_view import build_map_figure
 
-def dijkstra(graph, start, end):
-    # graph = { 'A': [('B', 5), ('C', 2)], ... }
-    
-    distances = {node: float('inf') for node in graph}
-    distances[start] = 0
-    prev = {}
-    pq = [(0, start)]  # (cost, node)
+st.set_page_config(page_title="Campus Navigator", layout="wide")
+st.title("Mock Path Advisor for UofU Campus")
 
-    while pq:
-        cost, node = heapq.heappop(pq)
+nodes, edges, graph = load_graph()
+node_labels = {nid: data["label"] for nid, data in nodes.items()}
 
-        if cost > distances[node]:
-            continue
+# Side bar
+with st.sidebar:
+    st.header("Find a Route")
+    start = st.selectbox("Start", options=list(nodes.keys()),
+                         format_func=lambda x: node_labels[x])
+    end   = st.selectbox("End",   options=list(nodes.keys()),
+                         format_func=lambda x: node_labels[x], index=1)
+    go    = st.button("Find Shortest Path", use_container_width=True)
 
-        for neighbor, weight in graph[node]:
-            new_cost = cost + weight
-            if new_cost < distances[neighbor]:
-                distances[neighbor] = new_cost
-                prev[neighbor] = node
-                heapq.heappush(pq, (new_cost, neighbor))
+# Main map
+path, cost = [], 0
 
-    # Reconstruct path
-    path = []
-    cur = end
-    while cur in prev:
-        path.append(cur)
-        cur = prev[cur]
-    path.append(start)
-    path.reverse()
+if go:
+    if start == end:
+        st.sidebar.warning("Start and end must be different.")
+    else:
+        path, cost = dijkstra(graph, start, end)
+        if not path:
+            st.sidebar.error("No path found between those buildings.")
+        else:
+            st.sidebar.success("Path found!")
 
-    return path, distances[end]
-
-
-# Example usage
-graph = {
-    'Library':  [('Plaza', 150),  ('Dorm A', 300)],
-    'Plaza':    [('Library', 150),('Gym', 200),    ('Canteen', 100)],
-    'Dorm A':   [('Library', 300),('Canteen', 120)],
-    'Gym':      [('Plaza', 200),  ('Field', 80)],
-    'Canteen':  [('Plaza', 100),  ('Dorm A', 120)],
-    'Field':    [('Gym', 80)],
-}
-
-path, total = dijkstra(graph, 'Library', 'Field')
-print("Path:", " → ".join(path))
-print("Distance:", total)
+fig = build_map_figure(nodes, edges, path)
+st.plotly_chart(fig, use_container_width=True, config={"scrollZoom": True})
